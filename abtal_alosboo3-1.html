@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>أبطال الأسبوع 🏆 | ElKheta</title>
+<style>
+:root{color-scheme:light dark;--bg:#090909;--panel:#12110e;--gold:#e9bd58;--gold2:#fff0b0;--muted:#b9b09b;--line:#59451d;--text:#fff9e9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#090909;color:var(--text);font-family:Tahoma,"Arial",sans-serif}
+#app{min-height:100vh;width:100%;background:radial-gradient(ellipse at 50% 18%,#30220c 0%,#11100d 30%,#090909 70%);overflow:hidden;position:relative}
+button,input{font:inherit}
+button{cursor:pointer}
+header{max-width:1180px;margin:auto;padding:22px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
+.crown{width:48px;height:48px;display:grid;place-items:center;border:1px solid #8d6b28;border-radius:15px;background:linear-gradient(145deg,#4a3711,#171208);font-size:27px;box-shadow:0 0 24px #e7b94320}
+.brand small{display:block;color:var(--muted);font-size:11px;margin-top:4px;letter-spacing:1.5px;direction:ltr;text-align:right}
+.header-actions,.actions{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+.btn{border:1px solid #795c23;color:#f8dda0;background:linear-gradient(180deg,#251d0c,#15120b);padding:10px 15px;border-radius:12px;font-size:13px;transition:.2s;box-shadow:0 5px 18px #0005}
+.btn:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 0 20px #e9bd5820}
+.btn.primary{background:linear-gradient(135deg,#ffe7a0,#bd8a2b);color:#211706;border-color:#ffdf80;font-weight:800}
+.hero{text-align:center;max-width:900px;padding:30px 20px 10px;margin:auto;position:relative}
+.eyebrow{color:var(--gold);font-size:12px;letter-spacing:3px;direction:ltr}
+h1{font-size:clamp(32px,5.5vw,62px);margin:15px 0 10px;line-height:1.25;color:#ffdf8b;text-shadow:0 0 24px #dca42c3d}
+.subtitle{color:#e4d8b9;font-size:clamp(15px,2.4vw,19px);margin:0}
+.goldline{height:2px;width:min(380px,70vw);margin:25px auto;background:linear-gradient(90deg,transparent,#f8db85,#fff1bd,#c48b22,transparent);background-size:200% 100%;animation:shine 3.5s linear infinite;box-shadow:0 0 12px #e9bd5855}
+.welcome{color:#a9a08a;font-size:13px;line-height:1.9;margin:15px auto 0;max-width:570px}
+.progress-wrap{display:flex;align-items:center;justify-content:center;gap:30px;margin:30px auto 26px;padding:0 16px}
+.progress-copy{text-align:right}
+.progress-copy strong{display:block;direction:ltr;letter-spacing:4px;color:var(--gold);font-size:18px;margin-bottom:9px}
+.progress-copy span{color:#a9a08a;font-size:13px;line-height:1.8;display:block;max-width:220px}
+.progress{width:142px;height:142px;flex:none;border-radius:50%;display:grid;place-items:center;position:relative;background:conic-gradient(var(--gold) var(--p,0%),#342a17 0);box-shadow:0 0 32px #e9bd5820;transition:background 1.6s ease}
+.progress:before{content:"";position:absolute;inset:7px;border-radius:50%;background:#0d0c09;border:1px solid #4b3b1b}
+.progress:after{content:"";position:absolute;inset:-4px;border:1px solid #d9ad4b70;border-radius:50%;animation:ring 3s ease-in-out infinite}
+.progress-inner{position:relative;z-index:1;text-align:center}
+.progress-inner b{font-size:31px;color:#ffdf8b;display:block;direction:ltr}
+.progress-inner small{color:#8f846a;letter-spacing:2px;font-size:9px;direction:ltr}
+.section-heading{max-width:1150px;margin:20px auto 18px;padding:0 20px;display:flex;justify-content:space-between;align-items:end;gap:15px}
+.section-heading h2{margin:0;font-size:22px;color:#f4d27c}
+.section-heading p{margin:7px 0 0;color:#91866f;font-size:12px}
+.count{font-size:12px;color:#d9bd75;border:1px solid #493819;border-radius:99px;padding:8px 12px;white-space:nowrap}
+.grid{max-width:1150px;margin:0 auto;padding:0 20px 26px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.badge{min-height:148px;position:relative;border-radius:20px;border:1px solid #6e5425;background:radial-gradient(ellipse at 50% 0%,#3b2c10 0%,#19150d 48%,#11100d 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 12px 15px;text-align:center;overflow:hidden;box-shadow:inset 0 0 0 3px #d3a7480c,0 9px 22px #0005;transition:transform .28s,border-color .28s,box-shadow .28s;animation:rise .65s both;animation-delay:var(--delay,0s)}
+.badge:before{content:"";position:absolute;inset:5px;border:1px solid #b58b3c47;border-radius:15px;pointer-events:none}
+.badge:after{content:"";position:absolute;width:150%;height:60%;top:-85%;left:-25%;background:linear-gradient(transparent,#ffedac12,transparent);transform:rotate(-18deg);transition:top .45s}
+.badge:hover{transform:translateY(-5px) scale(1.015);border-color:#f3d47b;box-shadow:0 0 26px #d8a83a25,inset 0 0 20px #d8a83a0d}
+.badge:hover:after{top:120%}
+.badge:focus-visible{outline:2px solid #ffe7a0;outline-offset:4px}
+.badge .mini-crown{font-size:21px;color:#f2d078;margin-bottom:8px;filter:drop-shadow(0 0 7px #e9bd5860)}
+.badge .student-name{font-size:clamp(14px,1.35vw,17px);font-weight:700;line-height:1.6;color:#fff1c5;position:relative;z-index:1;overflow-wrap:anywhere}
+.badge .tap{font-size:10px;color:#9b8a61;margin-top:7px}
+.badge.empty{border-style:dashed;background:#11100d;box-shadow:none;color:#76694c}
+.badge.empty .student-name{color:#887b5c;font-weight:500}
+.pagination{display:flex;justify-content:center;align-items:center;gap:14px;padding:0 16px 34px}
+.page-info{color:#b5a780;font-size:12px;min-width:100px;text-align:center}
+.bottom-banner{border-top:1px solid #44351b;border-bottom:1px solid #44351b;background:#100e09;color:#e8c66e;padding:13px;text-align:center;font-size:13px;letter-spacing:.4px;overflow:hidden}
+footer{padding:22px;text-align:center;color:#6e654f;font-size:11px}
+#stars{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.star{position:absolute;color:#e9bd58;opacity:.22;animation:float var(--dur,7s) ease-in-out infinite;left:var(--x);top:var(--y);font-size:var(--size,12px)}
+header,.hero,.section-heading,.grid,.pagination,.bottom-banner,footer{position:relative;z-index:1}
+.modal-backdrop{position:fixed;inset:0;background:#000c;display:none;align-items:center;justify-content:center;padding:20px;z-index:20;backdrop-filter:blur(8px)}
+.modal-backdrop.show{display:flex;animation:fade .2s ease}
+.celebration{width:min(500px,100%);position:relative;text-align:center;padding:32px 24px 25px;border:1px solid #d7ad50;border-radius:25px;background:radial-gradient(ellipse at top,#38290e,#14120d 60%);box-shadow:0 0 70px #e9bd5830;animation:zoom .35s cubic-bezier(.2,.8,.2,1)}
+.celebration .big-crown{font-size:48px;filter:drop-shadow(0 0 15px #ffda6b88)}
+.celebration h2{color:#ffdf8b;font-size:clamp(25px,5vw,34px);margin:10px 0 17px;overflow-wrap:anywhere}
+.celebration p{line-height:2;margin:5px 0;color:#f1e6c9;font-size:15px}
+.celebration .proud{color:#f3cd70;font-weight:bold;margin:18px 0 22px}
+.close{position:absolute;left:13px;top:12px;background:#231b0b;color:#e7c56f;border:1px solid #5b451c;border-radius:9px;width:33px;height:33px}
+#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:30}
+.panel{width:min(650px,100%);max-height:90vh;overflow:auto;border:1px solid #85652b;border-radius:20px;background:#13110c;padding:22px;box-shadow:0 0 50px #000a}
+.panel h2{color:#f4d27c;margin-top:0}
+.panel label{display:block;color:#d4c49b;font-size:12px;margin:12px 0 6px}
+.panel input{width:100%;background:#090908;color:#fff2cb;border:1px solid #51401f;border-radius:10px;padding:11px;outline:none}
+.panel input:focus{border-color:#d8ad50}
+.panel-row{display:flex;gap:8px;align-items:center;margin:8px 0}
+.panel-row input{flex:1;min-width:0}
+.panel-row button{padding:8px 10px;border-radius:8px;border:1px solid #664e22;background:#21190b;color:#ffdfa0}
+.panel-note{color:#9d9071;font-size:12px;line-height:1.8}
+.panel-list{max-height:300px;overflow:auto;margin:12px 0}
+.toast{position:fixed;bottom:65px;left:50%;transform:translateX(-50%);background:#211a0b;border:1px solid #a27b2e;color:#ffe4a0;padding:11px 16px;border-radius:12px;z-index:50;display:none;font-size:13px}
+@keyframes shine{to{background-position:-200% 0}}
+@keyframes ring{0%,100%{box-shadow:0 0 8px #e9bd5810;transform:scale(1)}50%{box-shadow:0 0 22px #e9bd5840;transform:scale(1.025)}}
+@keyframes rise{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg);opacity:.12}50%{transform:translateY(-18px) rotate(25deg);opacity:.5}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes zoom{from{opacity:0;transform:scale(.85) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@media(max-width:850px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.badge{min-height:135px}.progress-wrap{gap:18px}}
+@media(max-width:560px){header{padding:15px 14px;align-items:flex-start}.brand{font-size:14px}.crown{width:40px;height:40px}.header-actions .btn{padding:9px 10px;font-size:11px}.hero{padding-top:23px}.progress-wrap{flex-direction:column;gap:14px;margin:24px auto}.progress-copy{text-align:center}.progress-copy span{max-width:290px}.progress{width:128px;height:128px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 13px 24px;gap:10px}.badge{min-height:125px;padding:14px 9px}.badge .student-name{font-size:14px}.section-heading{padding:0 14px}.section-heading h2{font-size:19px}.section-heading p{font-size:11px}.count{font-size:10px;padding:7px 9px}.welcome{font-size:12px}.actions{justify-content:center}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div id="app">
+<div id="stars" aria-hidden="true"></div>
+<header>
+  <div class="brand"><div class="crown" aria-hidden="true">♛</div><div>منصة الخطة التعليمية<small>ELKHETA EDUCATIONAL PLATFORM</small></div></div>
+  <div class="header-actions">
+    <button class="btn" id="soundBtn" aria-pressed="true">🔔 الصوت: مفعّل</button>
+    <button class="btn" id="manageBtn">⚙️ إدارة الأبطال</button>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="eyebrow">THE WEEKLY CHAMPIONS</div>
+  <h1>🏆 أبطال الأسبوع 🏆</h1>
+  <p class="subtitle">أبطال مس دنيا سالم الشطار اللي كملوا للآخر 💛</p>
+  <div class="goldline"></div>
+  <p class="welcome">كل خطوة بتاخدها النهارده بتقرّبك من حلمك. فخورين باجتهادكم يا أبطال، كمّلوا بنفس الحماس! ✨</p>
+  <div class="progress-wrap">
+    <div class="progress-copy"><strong>PROGRESS</strong><span>رحلتك مستمرة، وكل إنجاز صغير بيصنع فرق كبير.</span><div style="margin-top:10px"><button class="btn" id="progressSettings">تعديل النسبة ✎</button></div></div>
+    <div class="progress" id="progressCircle" style="--p:0%" role="img" aria-label="نسبة التقدم 100 بالمئة"><div class="progress-inner"><b id="progressValue">0%</b><small>YOUR PROGRESS</small></div></div>
+  </div>
+</section>
+<section aria-labelledby="boardTitle">
+  <div class="section-heading"><div><h2 id="boardTitle">قاعة الأبطال الملكية 👑</h2><p>اضغط على اسمك واحتفل بإنجازك!</p></div><div class="count" id="count">68 بطلًا</div></div>
+  <div class="grid" id="badgeGrid" aria-live="polite"></div>
+  <div class="pagination">
+    <button class="btn" id="prevPage">→ السابق</button><span class="page-info" id="pageInfo">الصفحة 1 من 6</span><button class="btn" id="nextPage">التالي ←</button>
+  </div>
+  <div class="actions" style="justify-content:center;padding:0 16px 34px">
+    <button class="btn primary" id="allCelebrate">✨ احتفل بالأبطال</button>
+    <button class="btn" id="topBtn">↑ العودة إلى أعلى الصفحة</button>
+  </div>
+</section>
+</main>
+<div class="bottom-banner"><span>✦　 الاجتهاد النهارده هو نجاح بكرة ✨　♛　 الاجتهاد النهارده هو نجاح بكرة ✨　✦</span></div>
+<footer>صُنعت بكل فخر لأبطال مس دنيا سالم · ElKheta 🏆</footer>
+</div>
+<canvas id="confetti"></canvas>
+<div class="modal-backdrop" id="celebrateModal" role="dialog" aria-modal="true" aria-labelledby="celebrateName">
+ <div class="celebration">
+  <button class="close" id="closeCelebrate" aria-label="إغلاق">✕</button>
+  <div class="big-crown">👑</div>
+  <h2 id="celebrateName">اسم البطل</h2>
+  <p><strong>عاااش يا بطل! 👑🔥</strong></p>
+  <p>طول ما أنت من أبطال الأسبوع يبقى ماشي كويس! 💪</p>
+  <p>كمّل للآخر علشان نشوفك بإذن الله من الأوائل! 🏆✨</p>
+  <div class="proud">فخورين بمجهودك يا بطل 💛</div>
+  <button class="btn primary" id="continueBtn">يلا نكمّل! 🚀</button>
+ </div>
+</div>
+<div class="modal-backdrop" id="manageModal" role="dialog" aria-modal="true" aria-labelledby="manageTitle">
+ <div class="panel">
+  <button class="close" id="closeManage" aria-label="إغلاق">✕</button>
+  <h2 id="manageTitle">⚙️ إدارة لوحة الأبطال</h2>
+  <p class="panel-note">تقدري تضيفي أو تعدّلي أو تحذفي الأسماء من هنا. التغييرات تُحفظ محليًا على هذا الجهاز والمتصفح فقط، ولا تتزامن تلقائيًا بين الأجهزة.</p>
+  <label for="adminPass">رمز دخول المشرفة (افتراضي: 2026)</label>
+  <input id="adminPass" type="password" autocomplete="current-password" placeholder="أدخلي رمز الإدارة">
+  <button class="btn primary" id="unlockBtn" style="margin-top:10px">فتح لوحة الإدارة</button>
+  <div id="adminArea" hidden>
+   <label for="newName">إضافة اسم طالب</label>
+   <div class="panel-row"><input id="newName" maxlength="60" placeholder="اكتبي اسم الطالب الثلاثي"><button id="addName">＋ إضافة</button></div>
+   <label>الأسماء الحالية (اختاري تعديل أو حذف)</label>
+   <div class="panel-list" id="adminList"></div>
+   <label for="progressInput">نسبة PROGRESS (من 0 إلى 100)</label>
+   <div class="panel-row"><input id="progressInput" type="number" min="0" max="100" value="100"><button id="saveProgress">حفظ النسبة</button></div>
+   <p class="panel-note">تنبيه: رمز الإدارة داخل ملف الموقع ليس حماية أمنية حقيقية؛ أي شخص لديه الملف يستطيع فحصه. استخدمي تسجيل دخول بخادم وقاعدة بيانات لو احتجتِ حماية فعلية ومزامنة.</p>
+  </div>
+ </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const DEFAULT_NAMES = ["سيف هشام","جني عصام","الاء عاطف","خديجه مصطفي","خديجه محمد","دارين محمود","سعد محمد عبده","زياد عاشور","بلال محمود","ايه محمد","ميرال محمد","شاهندا رمضان","اسراء كليب","قطز حمدي","ريتاج نبيه","ماري مينا","ايمن تامر","رودينه حسن","اياد محمد سلامه","مصطفي احمد","يوسف علي انور","مسلم رجب","يمني مدحت","مروج عمرو","محمد عماد","محمد شريف","انس اسماعيل","محمد العبيدي","ملك بدوي","مريم محمد الداودي","بسنت حسن","مارتينا اشرف","حبيبه اسامه","يوسف هاني","يارا عواد","نور محمد","جني محمد","يوسف عبد الرحمن","جني سعد الله","ضحي محمد","احمد مصطفي","ملك علاء","عبد لرحمن صابر","عمر ربيع محمود","عمر سهد الهلالي","رودينا خالد","ايمي عماد","بشاير ابراهيم","جني عادل","احمد عبد الفتاح","ايمان غنيم","حنين احمد","وعد وليد","وفاء محمد","عائشه اسامه","ريم تامر","فريده علاء","محمد هيثم","حبيبه محمود","اسماء نشات","زياد كريم","اياد ماهر","احمد حسام","ساندرا مجدي","ساره خالد","الاء سيد","سلمي احمد البنا"];
+const STORAGE_KEY="elkheta_weekly_champions_v1";
+let names=loadNames(), page=0, perPage=12, soundOn=true, audioCtx=null, progress=100;
+function loadNames(){try{const x=JSON.parse(localStorage.getItem(STORAGE_KEY));return Array.isArray(x)?x.filter(v=>typeof v==="string"):DEFAULT_NAMES.slice()}catch{return DEFAULT_NAMES.slice()}}
+function saveNames(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(names));toast("اتحفظت التعديلات على الجهاز ✅")}catch{toast("تعذر الحفظ في المتصفح")}}
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.style.display="block";clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.style.display="none",2800)}
+function render(){
+ const grid=document.getElementById("badgeGrid");grid.innerHTML="";
+ const pages=Math.max(1,Math.ceil(names.length/perPage));page=Math.max(0,Math.min(page,pages-1));
+ for(let i=page*perPage;i<Math.min(names.length,(page+1)*perPage);i++){
+  const b=document.createElement("button");b.type="button";b.className="badge";b.style.setProperty("--delay",((i%perPage)*.035)+"s");
+  const crown=document.createElement("span");crown.className="mini-crown";crown.textContent="♛";
+  const nm=document.createElement("span");nm.className="student-name";nm.textContent=names[i];
+  const tap=document.createElement("span");tap.className="tap";tap.textContent="اضغط للاحتفال ✨";
+  b.append(crown,nm,tap);b.addEventListener("click",()=>celebrate(names[i],b));grid.appendChild(b);
+ }
+ for(let i=names.length%perPage===0?0:perPage-(names.length%perPage);i>0;i--){
+  const b=document.createElement("div");b.className="badge empty";b.setAttribute("aria-label","مكان فارغ");const c=document.createElement("span");c.className="mini-crown";c.textContent="☆";const n=document.createElement("span");n.className="student-name";n.textContent="في انتظار بطل جديد";const t=document.createElement("span");t.className="tap";t.textContent="مساحة متاحة";b.append(c,n,t);grid.appendChild(b);
+ }
+ document.getElementById("count").textContent=names.length+" بطلًا";
+ document.getElementById("pageInfo").textContent="الصفحة "+(page+1)+" من "+pages;
+ document.getElementById("prevPage").disabled=page===0;document.getElementById("nextPage").disabled=page>=pages-1;
+ document.getElementById("prevPage").style.opacity=page===0?".4":"1";document.getElementById("nextPage").style.opacity=page>=pages-1?".4":"1";
+}
+function playChime(){if(!soundOn)return;try{audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==="suspended")audioCtx.resume();const now=audioCtx.currentTime;[659,784,988,1318].forEach((f,i)=>{const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type="sine";o.frequency.value=f;g.gain.setValueAtTime(.0001,now+i*.105);g.gain.exponentialRampToValueAtTime(.13,now+i*.105+.025);g.gain.exponentialRampToValueAtTime(.0001,now+i*.105+.25);o.connect(g);g.connect(audioCtx.destination);o.start(now+i*.105);o.stop(now+i*.105+.27)})}catch{}}
+function celebrate(name,el){document.getElementById("celebrateName").textContent=name;document.getElementById("celebrateModal").classList.add("show");playChime();burst(el?el.getBoundingClientRect():null,100)}
+function closeCelebration(){document.getElementById("celebrateModal").classList.remove("show")}
+const canvas=document.getElementById("confetti"),ctx=canvas.getContext("2d");let particles=[],raf=0;
+function resizeCanvas(){canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;canvas.style.width=innerWidth+"px";canvas.style.height=innerHeight+"px";ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
+addEventListener("resize",resizeCanvas);resizeCanvas();
+function burst(rect,count=100){if(matchMedia("(prefers-reduced-motion: reduce)").matches)count=20;const x=rect?rect.left+rect.width/2:innerWidth/2,y=rect?rect.top+rect.height/2:innerHeight*.4;for(let i=0;i<count;i++)particles.push({x,y,vx:(Math.random()-.5)*9,vy:Math.random()*-8-2,g:.13+Math.random()*.13,size:3+Math.random()*5,life:70+Math.random()*35,rot:Math.random()*6,vr:(Math.random()-.5)*.2,shape:Math.random()>.5?"rect":"star"});if(!raf)drawParticles()}
+function drawParticles(){ctx.clearRect(0,0,innerWidth,innerHeight);particles=particles.filter(p=>p.life>0&&p.y<innerHeight+40);for(const p of particles){p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.vx*=.992;p.rot+=p.vr;p.life--;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.globalAlpha=Math.min(1,p.life/25);ctx.fillStyle=["#f8d878","#fff0b2","#c28b27","#fff9df"][Math.floor(Math.random()*4)];if(p.shape==="star"){ctx.font=p.size*2+"px serif";ctx.fillText("✦",0,0)}else ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*1.6);ctx.restore()}if(particles.length)raf=requestAnimationFrame(drawParticles);else{cancelAnimationFrame(raf);raf=0;ctx.clearRect(0,0,innerWidth,innerHeight)}}
+function setProgress(n){progress=Math.max(0,Math.min(100,Number(n)||0));const c=document.getElementById("progressCircle"),v=document.getElementById("progressValue");c.style.setProperty("--p",progress+"%");v.textContent=progress+"%";c.setAttribute("aria-label","نسبة التقدم "+progress+" بالمئة");}
+function openManage(){document.getElementById("manageModal").classList.add("show");document.getElementById("adminPass").focus()}
+function closeManage(){document.getElementById("manageModal").classList.remove("show")}
+function renderAdmin(){const list=document.getElementById("adminList");list.innerHTML="";names.forEach((name,i)=>{const row=document.createElement("div");row.className="panel-row";const inp=document.createElement("input");inp.value=name;inp.setAttribute("aria-label","اسم الطالب");const edit=document.createElement("button");edit.textContent="حفظ";edit.onclick=()=>{const val=inp.value.trim();if(!val)return toast("اكتبي اسمًا صحيحًا");names[i]=val;saveNames();render();renderAdmin()};const del=document.createElement("button");del.textContent="حذف";del.onclick=()=>{if(confirm("حذف "+names[i]+" من قائمة الأبطال؟")){names.splice(i,1);saveNames();render();renderAdmin()}};row.append(inp,edit,del);list.append(row)})}
+document.getElementById("prevPage").onclick=()=>{page--;render();document.getElementById("boardTitle").scrollIntoView({behavior:"smooth",block:"start"})};
+document.getElementById("nextPage").onclick=()=>{page++;render();document.getElementById("boardTitle").scrollIntoView({behavior:"smooth",block:"start"})};
+document.getElementById("closeCelebrate").onclick=closeCelebration;document.getElementById("continueBtn").onclick=closeCelebration;
+document.getElementById("celebrateModal").addEventListener("click",e=>{if(e.target.id==="celebrateModal")closeCelebration()});
+document.getElementById("manageBtn").onclick=openManage;document.getElementById("closeManage").onclick=closeManage;
+document.getElementById("manageModal").addEventListener("click",e=>{if(e.target.id==="manageModal")closeManage()});
+document.getElementById("unlockBtn").onclick=()=>{if(document.getElementById("adminPass").value==="2026"){document.getElementById("adminArea").hidden=false;renderAdmin();document.getElementById("progressInput").value=progress;toast("أهلًا يا مس دنيا 👑")}else toast("رمز الإدارة غير صحيح")};
+document.getElementById("addName").onclick=()=>{const inp=document.getElementById("newName"),n=inp.value.trim();if(!n)return toast("اكتبي اسم الطالب أولًا");names.push(n);page=Math.floor((names.length-1)/perPage);saveNames();render();renderAdmin();inp.value=""};
+document.getElementById("saveProgress").onclick=()=>{setProgress(document.getElementById("progressInput").value);try{localStorage.setItem(STORAGE_KEY+"_progress",String(progress))}catch{}toast("تم تحديث نسبة التقدم")};
+document.getElementById("progressSettings").onclick=()=>{openManage();document.getElementById("progressInput").value=progress;document.getElementById("adminPass").focus()};
+document.getElementById("soundBtn").onclick=()=>{soundOn=!soundOn;document.getElementById("soundBtn").textContent=soundOn?"🔔 الصوت: مفعّل":"🔇 الصوت: مكتوم";document.getElementById("soundBtn").setAttribute("aria-pressed",String(soundOn));if(soundOn)playChime()};
+document.getElementById("allCelebrate").onclick=()=>{burst(null,180);playChime();toast("تحية لكل أبطال الأسبوع! 👑")};
+document.getElementById("topBtn").onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
+for(let i=0;i<34;i++){const s=document.createElement("span");s.className="star";s.textContent=["✦","✧","⋆","·"][i%4];s.style.setProperty("--x",Math.random()*100+"%");s.style.setProperty("--y",Math.random()*100+"%");s.style.setProperty("--size",(8+Math.random()*13)+"px");s.style.setProperty("--dur",(5+Math.random()*7)+"s");s.style.animationDelay=(-Math.random()*8)+"s";document.getElementById("stars").append(s)}
+try{const saved=localStorage.getItem(STORAGE_KEY+"_progress");if(saved!==null)progress=Number(saved)}catch{}
+render();setTimeout(()=>setProgress(progress),180);
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeCelebration();closeManage()}});
+</script>
+</body>
+</html>
